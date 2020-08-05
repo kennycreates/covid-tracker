@@ -8,7 +8,7 @@ function showError(input, message){
     const formControl = input.parentElement;
     formControl.className = 'form-control error';
     const small = formControl.querySelector('small');
-    small.innerText = message
+    small.innerText = message;
 }
 //show success
 function showSuccess(input){
@@ -19,33 +19,31 @@ function showSuccess(input){
 //vakidate email
 function isValidEmail(email){
     const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(String(email).toLowerCase()); //test method will verify if it matches email format
+    if (re.test(input.value.trim())) {
+        showSuccess(input);
+      } else {
+        showError(input, 'Email is not valid');
+      }
+    }
+    //test method will verify if it matches email format
+
+
+//check required fields
+function checkRequired(inputArr){
+    inputArr.forEach(function(input){
+        console.log(input.id);
+        if(input.value.trim() === ''){
+            showError(input, 'is required');
+        }else {
+            showSuccess(input);
+        }
+    });
 }
 
 // Event listers
 form.addEventListener('submit', function(e){
     e.preventDefault();
-
-    if(username.value === ''){
-        showError(username, 'username is required');
-    }else{
-        showSuccess(username);
-    }
-
-    if(email.value === ''){
-        showError(email, 'email is required');
-    }else if(!isValidEmail(email.value)){
-        showSuccess(email);
-    }
-    if(password.value === ''){
-        showError(password, 'password is required');
-    }else{
-        showSuccess(password);
-    }
-    if(password2.value === ''){
-        showError(password2, 'verify your password');
-    }else{
-        showSuccess(password2);
-    }
+checkRequired([username, email, password, password2]);
+    
 }); 
 
