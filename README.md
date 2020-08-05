@@ -1,2 +1,12 @@
-# covid-tracker
-Can I Hang Out? A web app that journals your social distancing or social ant-distancing experiences. So you can document your symptoms, your visits, your comings and goings.
+## Form Validator (Intro Project)
+
+Simple client side form validation. Check requird, length, email and password match
+
+## Project Specifications
+
+- Create form UI
+- Show error messages under specific inputs
+- checkRequired() to accept array of inputs
+- checkLength() to check min and max length
+- checkEmail() to validate email with regex
+- checkPasswordsMatch() to match confirm password
