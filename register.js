@@ -35,6 +35,8 @@ function checkRequired(inputArr){
         }
     });
 }
+
+//password length
 function checkLength(input, min, max) {
     if(input.value.length < min){
     showError(input, `${getFieldName(input)} must be at least ${min} characters`);
@@ -44,8 +46,15 @@ function checkLength(input, min, max) {
            showSuccess(input);
         }
 }
+//password complexity
+function checkComplexity(input){
+    var input1 = /^[A-Za-z]\w{7, 14}$/;
+    if(input.value.match(input1)){
 
-//check password matych
+    }
+}
+
+//check password match
 function checkPasswordsMatch(input1, input2) {
     if (input1.value !== input2.value){
         showError(input2, 'Passwords do not match');

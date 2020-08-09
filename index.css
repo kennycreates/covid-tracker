@@ -1,0 +1,42 @@
+body
+{
+    padding: 0;
+    margin:0;
+    background-image: url(../covid-tracker/images/anna.jpg);
+    background-size: cover;
+    width: 100vw;
+    max-width:100%;
+}
+
+@font-face
+{
+    font-family: "vonique";
+    src: url("site-fonts/DevilBreezeBook.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+.nav h1
+{
+    font-family: "vonique-92";
+    font-size: 30px;
+    color: #5B8266;
+    margin-left: 40px;
+}
+
+.links ul
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-right: 40px;
+    list-style: none;
+    margin-top: -40px;
+}
+ 
+.links li
+{
+    padding: 5px;
+    list-style: none;
+    margin-right: 20px;
+}
+
